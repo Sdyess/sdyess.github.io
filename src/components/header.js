@@ -13,6 +13,6 @@ export default () => (
   <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet"/>
   <link href="./static/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"/>
-  <link href="../styles/global.css" rel="stylesheet"/>
+  <link href="./static/global.min.css" rel="stylesheet"/> 
 </head>
 ) 

@@ -6,8 +6,6 @@ import Experience from "../components/experience"
 import Education from "../components/education"
 import Projects from "../components/projects"
 
-import { Link } from "gatsby"
-
 export default () => (
     <html>
         <Header />
@@ -26,6 +24,7 @@ export default () => (
             <script src="./static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
             <script src="./static/vendor/jquery-easing/jquery.easing.min.js"></script>
             <script src="./static/resume.min.js"></script>
+            
         </body>
     </html>
     
