@@ -3,22 +3,22 @@ import React from 'react';
 class Header extends React.Component {
     render() {
         return (
-            <div class="container">
-                <img src="./static/images/profile.jpg" alt="Profile" class="rounded-circle" width="120px" height="120px"/>
+            <div className="container center">
+                <img src="./static/images/profile.jpg" alt="Profile" className="rounded-circle center" width="120px" height="120px"/>
                 <br/><br/>
                 <h3>Skyler Dyess</h3>
-                <ul class="nav justify-content-center">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
+                <ul className="nav justify-content-center">
+                    <li className="nav-item">
+                        <a className="nav-link active" href="#">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Projects</a>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">Projects</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Social</a>
+                    <li className="nav-item">
+                        <a className="nav-link" href="#">Social</a>
                     </li>
                 </ul>
             </div>
