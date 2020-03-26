@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faLinkedin, faGithub, faTwitter, faStackOverflow} from '@fortawesome/free-brands-svg-icons';
+
 class Header extends React.Component {
     render() {
         return (
@@ -9,16 +12,16 @@ class Header extends React.Component {
                 <h3>Skyler Dyess</h3>
                 <ul className="nav justify-content-center">
                     <li className="nav-item">
-                        <a className="nav-link active" href="#">Home</a>
+                        <a className="nav-link active" href="#"><FontAwesomeIcon icon={faLinkedin} size="2x"/></a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">About</a>
+                        <a className="nav-link" href="#"><FontAwesomeIcon icon={faGithub} size="2x"/></a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Projects</a>
+                        <a className="nav-link" href="#"><FontAwesomeIcon icon={faTwitter} size="2x"/></a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Social</a>
+                        <a className="nav-link" href="#"><FontAwesomeIcon icon={faStackOverflow} size="2x"/></a>
                     </li>
                 </ul>
             </div>
