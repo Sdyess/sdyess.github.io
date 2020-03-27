@@ -4,13 +4,16 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+  margin-bottom: 120px;
 }
 
 .blog-post h3 {
   float:left;
 }
 
+.projectTitle {
+  display: inline-block;
+}
 .center {
   text-align: center;
 }

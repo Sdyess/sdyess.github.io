@@ -5,8 +5,9 @@ class BlogPost extends React.Component {
     render() {
         return(
             <div className="container-fluid blog-post">
-                <h3>{this.props.postTitle}</h3>
+                <h3>{this.props.postTitle}</h3><br/><br/>
                 <p>{this.props.postBody}</p>
+                <a href="#">Read More</a>
                 <br/><br/>
             </div>
         )
