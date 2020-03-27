@@ -12,16 +12,16 @@ class Header extends React.Component {
                 <h3>Skyler Dyess</h3>
                 <ul className="nav justify-content-center">
                     <li className="nav-item">
-                        <a className="nav-link active" href="#"><FontAwesomeIcon icon={faLinkedin} size="2x"/></a>
+                        <a className="nav-link" href="https://www.linkedin.com/in/skylerdyess"><FontAwesomeIcon icon={faLinkedin} size="2x"/></a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#"><FontAwesomeIcon icon={faGithub} size="2x"/></a>
+                        <a className="nav-link" href="https://www.github.com/sdyess"><FontAwesomeIcon icon={faGithub} size="2x"/></a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#"><FontAwesomeIcon icon={faTwitter} size="2x"/></a>
+                        <a className="nav-link" href="https://twitter.com/GuacSenpai"><FontAwesomeIcon icon={faTwitter} size="2x"/></a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#"><FontAwesomeIcon icon={faStackOverflow} size="2x"/></a>
+                        <a className="nav-link" href="https://stackoverflow.com/users/3347630/sdyess"><FontAwesomeIcon icon={faStackOverflow} size="2x"/></a>
                     </li>
                 </ul>
             </div>
