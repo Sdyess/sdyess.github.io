@@ -15,7 +15,7 @@ class About extends React.Component {
                     Some other things I enjoy and/or I am trying to enjoy. I still play World of Warcraft on and off since the original game came out, it is an endless relationship, 
                     and it is the reason I ever gained an interest in going to school for computer science in the first place. I recently caught up on the books within 
                     <a href="https://en.wikipedia.org/wiki/The_Kingkiller_Chronicle"> The Kingkiller Chronicle</a> by Patrick Rothfuss. I recently bought some hiking shoes 
-                    thinking I would get into hiking soon since moving to Austin, but it hasn't happened yet. Maybe soon.
+                    thinking I would get into hiking since moving to Austin, but it hasn't happened yet. Maybe soon.
                 </p>
                 <br/>
             </div>
