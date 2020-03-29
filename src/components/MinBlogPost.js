@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/BlogPost.css";
 
-class BlogPost extends React.Component {
+class MinBlogPost extends React.Component {
     render() {
         return(
             <div className="container-fluid blog-post">
@@ -14,4 +14,4 @@ class BlogPost extends React.Component {
     }
 }
 
-export default BlogPost;
+export default MinBlogPost;

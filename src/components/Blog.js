@@ -1,32 +1,74 @@
 import React from "react";
-import BlogPost from "./BlogPost";
+import MinBlogPost from "./MinBlogPost";
 import "../css/Blog.css";
 
 class Blog extends React.Component {
-
-    getBlogPosts() {
-        const blogPosts = [
-            {id: 1, title: 'Blog Post 1', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mauris ligula, bibendum sit amet ex eu, pharetra dignissim dui. Nunc sed imperdiet ligula, vitae ultricies justo. Donec vehicula pellentesque ligula. Integer sit amet diam finibus, blandit ligula a, pretium enim. Suspendisse semper neque rhoncus mattis lobortis. Ut commodo mollis nunc. Donec vehicula, nibh vel eleifend facilisis, purus odio efficitur nunc, nec facilisis enim dui ut enim. Phasellus et dolor eu massa aliquet vehicula varius et risus.'},
-            {id: 2, title: 'Blog Post 2', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mauris ligula, bibendum sit amet ex eu, pharetra dignissim dui. Nunc sed imperdiet ligula, vitae ultricies justo. Donec vehicula pellentesque ligula. Integer sit amet diam finibus, blandit ligula a, pretium enim. Suspendisse semper neque rhoncus mattis lobortis. Ut commodo mollis nunc. Donec vehicula, nibh vel eleifend facilisis, purus odio efficitur nunc, nec facilisis enim dui ut enim. Phasellus et dolor eu massa aliquet vehicula varius et risus.'},
-            {id: 3, title: 'Blog Post 3', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse mauris ligula, bibendum sit amet ex eu, pharetra dignissim dui. Nunc sed imperdiet ligula, vitae ultricies justo. Donec vehicula pellentesque ligula. Integer sit amet diam finibus, blandit ligula a, pretium enim. Suspendisse semper neque rhoncus mattis lobortis. Ut commodo mollis nunc. Donec vehicula, nibh vel eleifend facilisis, purus odio efficitur nunc, nec facilisis enim dui ut enim. Phasellus et dolor eu massa aliquet vehicula varius et risus.'}
-          ];
-
-        return blogPosts.map((post) => 
-            <BlogPost key={post.id} postTitle={post.title} postBody={post.content}/>
-        )
+    constructor(props) {
+        super(props);
+        this.state = {
+            posts: [],
+            isLoaded: false,
+            error: null
+        }
     }
     
+    componentDidMount() {
+        const options = {
+            method: 'GET',
+            mode: 'cors'
+        };
+        
+        fetch("https://blog-microservice.herokuapp.com/blog/posts", options)
+            .then(response => response.json())
+            .then(result => {
+                this.setState({
+                    posts: result.posts,
+                    isLoaded: true
+                });
+            },
+            (error) => {
+                this.setState({
+                  isLoaded: true,
+                  error
+                });
+              }
+            )
+    }
 
     render(){
-        let posts = this.getBlogPosts();
-        return (
-            <div className="container">
-                <hr/>
-                <br/>
-                <h2>Recent Thoughts</h2>
-                {posts}
-            </div>
-        )
+        const {isLoaded, posts, error} = this.state;
+        if (error) {
+            return (
+                <div className="container">
+                    <hr/>
+                    <br/>
+                    <h2>Recent Thoughts</h2>
+                    <p>An error occurred loading blog posts... try again later.</p>
+                </div>
+            )
+        }
+        else if (!isLoaded) {
+            return (
+                <div className="container">
+                    <hr/>
+                    <br/>
+                    <h2>Recent Thoughts</h2>
+                    <p>Loading posts...</p>
+                </div>
+            )
+        } else {
+            const blogPosts = posts.map((post) => 
+                <MinBlogPost key={post.id} postTitle={post.title} postBody={post.content}/>
+            )
+            return (
+                <div className="container">
+                    <hr/>
+                    <br/>
+                    <h2>Recent Thoughts</h2>
+                    {blogPosts}
+                </div>
+            )
+        }
     }
 }
 
