@@ -7,7 +7,7 @@ class Header extends React.Component {
     render() {
         return (
             <div className="container center">
-                <img src="./static/images/profile.jpg" alt="Profile" className="rounded-circle center" width="120px" height="120px"/>
+                <img src={process.env.PUBLIC_URL + "/./static/images/profile.jpg"} alt="Profile" className="rounded-circle center" width="120px" height="120px"/>
                 <br/><br/>
                 <h3>Skyler Dyess</h3>
                 <ul className="nav justify-content-center">

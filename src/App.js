@@ -1,22 +1,36 @@
 import React from 'react';
 import Header from './components/Header';
-import Blog from './components/Blog';
 import Footer from './components/Footer';
-import Projects from './components/Projects';
-import About from './components/About';
+import HomePage from './components/HomePage';
+import Blog from './components/Blog';
+import FullBlogPost from './components/FullBlogPost';
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <About/>
-      <Blog/>
-      
-      <Projects/>
-      <Footer/>
-    </div>
+    <Router>
+      <div className="App">
+        <Header/>
+          <Switch>
+            <Route exact path="/">
+              <HomePage />
+            </Route>
+            <Route path="/blog/:id">
+              <FullBlogPost/>
+            </Route>
+          </Switch>
+        <Footer/>
+      </div>
+    </Router>
+    
   );
 }
 
