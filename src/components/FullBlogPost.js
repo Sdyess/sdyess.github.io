@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import "../css/BlogPost.css";
 import {useParams} from 'react-router-dom';
+import DomPurify from 'dompurify';
+
+import "../css/BlogPost.css";
 
 const FullBlogPost = () => {
     const [post, setPost] = useState(null);
@@ -42,7 +44,7 @@ const FullBlogPost = () => {
             </div>
         )
     } else {
-        const htmlData = {__html: post.content};
+        const htmlData = {__html: DomPurify.sanitize(post.content)};
         return (
             <div className="container-fluid blog-post">
                 <h3>{post.title}</h3><br/><br/>
