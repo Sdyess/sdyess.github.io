@@ -43,13 +43,19 @@ const FullBlogPost = () => {
                 <p>Loading blog post...</p>
             </div>
         )
-    } else {
+    } else if (post) {
         const htmlData = {__html: DomPurify.sanitize(post.content)};
         return (
             <div className="container-fluid blog-post">
                 <h3>{post.title}</h3><br/><br/>
                 <div dangerouslySetInnerHTML={htmlData}></div>
                 <br/><br/>
+            </div>
+        )
+    }else {
+        return (
+            <div className="container">
+                <p>Unable to find the request blog post.</p>
             </div>
         )
     }
