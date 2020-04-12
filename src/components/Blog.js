@@ -57,10 +57,11 @@ class Blog extends React.Component {
                 </div>
             )
         } else {
-            const blogPosts = posts.map((post) => 
+            let blogPosts = {};
+            if (posts) {
+                blogPosts = posts.map((post) => 
                 <MinBlogPost key={post.id} postId={post.id} postTitle={post.title} postBody={post.preview}/>
-            )
-            if (blogPosts.length > 0) {
+                )
                 return (
                     <div className="container">
                         <hr/>
