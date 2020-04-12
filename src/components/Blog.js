@@ -70,6 +70,8 @@ class Blog extends React.Component {
                         {blogPosts}
                     </div>
                 )
+            } else {
+                return null;
             }
         }
     }
